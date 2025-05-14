@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #2d2e32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin-top: 10px;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    section {
+      display: none;
+      padding: 60px 20px;
+      text-align: center;
+      min-height: 80vh;
+      animation: fade 0.5s ease-in-out forwards;
+    }
+/* Unique backgrounds for each section */
+#welcome {
+  background: linear-gradient(to right, #290808, #cfdef3);
+}
+
+#about {
+  background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+
+#skills {
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+}
+
+#projects {
+  background: linear-gradient(to right, #fceabb, #f8b500);
+}
+
+#contact {
+  background: linear-gradient(to right, #ff0000, #e2ebf0);
+}
+    .visible {
+      display: block;
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 { font-size: 2rem; margin-bottom: 20px; }
+    ul { list-style-type: none; padding: 0; }
+    li { margin: 10px 0; }
+    .project a, button {
+      padding: 8px 16px;
+      background: #2d2e32;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    footer {
+      background: #2d2e32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mohammad Reshma</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('welcome')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About</a></li>
+        <li><a href="#" onclick="showSection('skills')">Skills</a></li>
+        <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+      </ul>
+    </nav>
+<section id="welcome" class="visible">
+  <h2>Welcome</h2>
+  <p>
+    Hi there! Welcome to my portfolio — a curated collection of my passion for coding, creativity, and continuous learning.  
+    As a Computer Science student specializing in AI & ML, I thrive on turning ideas into smart, functional, and user-friendly digital solutions.  
+    Explore my work, discover my skills, and let’s connect through the power of technology.
+  </p>
+</section>
+    <section id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a Computer Science Engineering student with a specialization in Artificial Intelligence and Machine Learning. <br> 
+    I enjoy building intelligent systems, exploring real-world applications of data science, and developing user-centric web projects.<br>  
+    With a strong foundation in programming, machine learning, and UI development, I aim to bridge the gap between complex technology and practical solutions. <br> 
+    Currently interning at Micro IT India, I'm expanding my skills through hands-on experience and continuous learning.
+  </p>
+</section>  </section>  <section id="skills">
+    <h2>Skills</h2>
+    <ol>
+<li>C</li>
+      <li>Python</li>
+      <li>java</li>
+<li>HTML, CSS, JavaScript</li>
+      <li>Git, GitHub</li>
+    </ol>
+  </section>  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Calculator</h3>
+      <p>A simple calculator for math operations.</p>
+      <a href="https://github.com/mohammadreshma042/Micro-IT-Internship/blob/main/Project-2:Calculator">View Code</a>
+    </div>
+    <div class="project">
+      <h3>To-Do List</h3>
+      <p>Task management app to boost productivity.</p>
+      <a href="https://github.com/mohammadreshma042/Micro-IT-Internship/blob/main/Project-3%3AToDoList">View Code</a>
+    </div>
+<div class="project">
+      <h3>Password Generator</h3>
+      <p>Generates passwords.</p>
+      <a href="https://github.com/mohammadreshma042/Micro-IT-Internship/blob/main/Project-11%3APassword%20Generator">View Code</a>
+    </div>
+<div class="project">
+      <h3>Rock-Paper-ScissorsGame</h3>
+      <p>Rock-Paper-ScissorsGame.</p>
+      <a href="https://github.com/mohammadreshma042/Micro-IT-Internship/blob/main/Project-10%3ARock-Paper-ScissorsGame">View Code</a>
+    </div>
+
+
+  </section>  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <span id="email">mohammadreshma042@gmail.com</span>
+      <button onclick="copyEmail()">Copy Email</button>
+    </p>
+  </section>  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+  </footer>  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('visible'));
+      document.getElementById(id).classList.add('visible');
+    }
+
+    function copyEmail() {
+      const email = document.getElementById('email').textContent;
+      navigator.clipboard.writeText(email).then(() => {
+        alert("Email copied to clipboard!");
+      });
+    }
+
+    window.onload = () => showSection('welcome');
+  </script></body>
+</html>
